@@ -60,6 +60,7 @@ class VimState
       'repeat-prefix': (e) => @repeatPrefix(e)
       'reverse-selections': (e) => @reverseSelections(e)
       'undo': (e) => @undo(e)
+      'save': => @save()
 
     @registerOperationCommands
       'activate-insert-mode': => new Operators.Insert(@editor, @)
@@ -330,6 +331,9 @@ class VimState
   # Returns a search motion
   getSearchHistoryItem: (index) ->
     @globalVimState.searchHistory[index]
+
+  save: ->
+    atom.workspace.saveActivePaneItem() if @mode is 'command'
 
   ##############################################################################
   # Mode Switching

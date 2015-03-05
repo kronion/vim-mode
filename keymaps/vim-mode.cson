@@ -191,6 +191,9 @@
   '" %': 'vim-mode:register-prefix'
   '" _': 'vim-mode:register-prefix'
 
+  ': w': 'vim-mode:save'
+  ': q': 'core:close'
+
 'atom-text-editor.vim-mode.operator-pending-mode, atom-text-editor.vim-mode.visual-mode':
   'i w': 'vim-mode:select-inside-word'
   'i "': 'vim-mode:select-inside-double-quotes'
